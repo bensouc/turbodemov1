@@ -1,0 +1,14 @@
+<div class="container mt-5 w-50">
+  <h1 class="mb-4">Contrats   <%= link_to new_contract_path do%>
+    <i class="fa-solid fa-circle-plus text-dark"></i>
+  <% end %>
+  </h1>
+
+  <%= render 'contracts/form', contract: Contract.new %>
+
+  <div class="list-group">
+    <% @contracts.each do |contract| %>
+      <%= render 'contracts/contract', contract: contract %>
+    <% end %>
+  </div>
+</div>

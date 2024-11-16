@@ -1,0 +1,22 @@
+<div class="list-group-item list-group-item-action d-flex align-items-center justify-content-between">
+  <div class="">
+    <img src="<%= contract.avatar_url %>" alt="Avatar" class="rounded-circle mr-3" style="width: 50px; height: 50px; object-fit: cover;">
+    <div>
+      <h5 class="mb-1"><i class="fa-solid fa-signature me-2"></i><%= contract.name %></h5>
+      <p class="mb-1"><i class="fa-solid fa-location-dot text-danger me-2"></i><%= contract.location %></p>
+      <small>
+        <p> <strong> <i class="fa-solid fa-crosshairs me-2"> </i><%= contract.killed ? 'RIP, you will be missed!' : 'Still kicking and taking names!' %></strong></p>
+      </small>
+    </div>
+  </div>
+  <div class="h-100 d-flex flex-column justify-content-between">
+    <%= link_to contract_path(contract), data:{turbo_method: :delete, turbo_confirm: "Vous abandonnez déja?"} do %>
+      <h2><i class="fa-regular fa-circle-xmark text-danger"></i></h2>
+    <% end %>
+    <% unless contract.killed? %>
+      <%= link_to kill_contract_path(contract), data:{turbo_method: :patch, turbo_confirm: "T es John Wick ou Dirty Harry?"} do%>
+      <h2><i class="fa-solid fa-skull-crossbones "></i></h2>
+      <% end %>
+    <% end %>
+  </div>
+</div>
