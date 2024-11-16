@@ -68,7 +68,7 @@ contracts = [
   },
 ]
 
-contracts.each do |contract_data|
+contracts.shuffle.each do |contract_data|
   Contract.create!(contract_data)
 end
 

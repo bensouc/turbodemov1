@@ -1,0 +1,13 @@
+.contract-card {
+  background-color: white;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: thin solid white;
+  border-radius: 5px;
+  &:hover {
+    transition: all 0.3s;
+    background: #000000b3;
+    border-color: #000000b3;
+    color: floralwhite;
+  }
+}
