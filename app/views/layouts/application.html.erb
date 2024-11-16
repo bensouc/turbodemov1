@@ -8,12 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
   </head>
 
   <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <%= render "shared/flashes" %>
+    <div style="margin-top: 5rem">
+      <%= yield %>
+    </div>
   </body>
 </html>
