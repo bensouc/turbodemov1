@@ -1,4 +1,6 @@
 <div class="container mt-5">
   <h1 class="mb-4">Congrats You get a new Contrat</h1>
+  <%= turbo_frame_tag "new_contract" do%>
     <%= render 'form',contract: Contract.new %>
+    <% end %>
 </div>

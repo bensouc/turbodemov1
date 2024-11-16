@@ -1,0 +1,4 @@
+<%= turbo_stream.prepend "contracts", @contract %>
+<%= turbo_stream.replace "new_contract" do %>
+  <%= turbo_frame_tag "new_contract" %>
+<%end%>

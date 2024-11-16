@@ -11,6 +11,7 @@
       <%= f.input :killed, label: 'Killed', as: :boolean, input_html: { class: 'form-check-input' } %>
     </div>
     <div class="form-group col-md-6 d-flex align-items-end">
+      <%= link_to "X", contracts_path, class: "btn btn-dark me-3 text-white" %>
       <%= button_tag type: :submit, class: 'btn btn-danger' do %>
         <i class="fa-solid fa-crosshairs ms-2 me-2 text-white"></i>
       <% end %>

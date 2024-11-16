@@ -7,7 +7,10 @@ class ContractsController < ApplicationController
   def create
     @contract = Contract.new(contract_params)
     @contract.save
-    redirect_to contract_path(@contract)
+    respond_to do |format|
+      format.html { redirect_to contract_path(@contract) }
+      format.turbo_stream
+    end
   end
 
   def kill
@@ -17,7 +20,10 @@ class ContractsController < ApplicationController
 
   def destroy
     @contract.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.turbo_stream
+    end
   end
 
   def show
