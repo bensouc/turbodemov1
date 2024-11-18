@@ -7,17 +7,17 @@ class ContractsController < ApplicationController
   def create
     @contract = Contract.new(contract_params)
     @contract.save
-    redirect_to contract_path(@contract)
+    redirect_to contract_path(@contract), notice: "A new contract has been add to the List"
   end
 
   def kill
     @contract.update(killed: true)
-    redirect_to contract_path(@contract)
+    redirect_to contract_path(@contract), notice: "Contract target has been eliminated"
   end
 
   def destroy
     @contract.destroy
-    redirect_to root_path
+    redirect_to root_path, notice: "Contract Destroyed"
   end
 
   def show
@@ -28,7 +28,7 @@ class ContractsController < ApplicationController
 
   def update
     @contract.update(contract_params)
-    redirect_to root_path
+    redirect_to root_path, notice: "Contract Modified"
   end
 
   private
