@@ -66,6 +66,60 @@ contracts = [
     killed: false,
     avatar_url: "https://upload.wikimedia.org/wikipedia/en/a/a3/Lordvoldemort.jpg",
   },
+  {
+    name: "Lex Luthor",
+    location: "Metropolis",
+    killed: false,
+    avatar_url: "https://upload.wikimedia.org/wikipedia/en/c/c7/SmallvilleLex.jpg",
+  },
+  {
+    name: "Magneto",
+    location: "Genosha",
+    killed: false,
+    avatar_url: "https://avatarfiles.alphacoders.com/118/11829.jpg",
+  },
+  {
+    name: "Le Bouffon Vert",
+    location: "New York",
+    killed: false,
+    avatar_url: "https://img.livraddict.com/covers/517/517121//couv26356811.jpg",
+  },
+  {
+    name: "Le Pingouin",
+    location: "Gotham City",
+    killed: false,
+    avatar_url: "https://batman-univers.fr/wp-content/uploads/2024/03/1710423288_Danny-DeVito-est-pret-a-redevenir-le-Pingouin.jpg",
+  },
+  {
+    name: "Palpatine (Empereur)",
+    location: "Coruscant",
+    killed: false,
+    avatar_url: "https://img.planete-starwars.com/upload/databank/1/Emperor.jpg",
+  },
+  {
+    name: "Hans Gruber",
+    location: "Los Angeles (Nakatomi Plaza)",
+    killed: false,
+    avatar_url: "http://www.moon-city-garbage.agency/diehard/die37.jpg",
+  },
+  {
+    name: "Norman Bates",
+    location: "Bates Motel",
+    killed: false,
+    avatar_url: "https://i1.sndcdn.com/artworks-Z96oVch7esg7BvEW-dqW4ag-t500x500.jpg",
+  },
+  {
+    name: "Anton Chigurh",
+    location: "Texas",
+    killed: false,
+    avatar_url: "https://fr.web.img4.acsta.net/newsv7/21/01/12/14/50/4547284.jpg",
+  },
+  {
+    name: "Pennywise",
+    location: "Derry, Maine",
+    killed: false,
+    avatar_url: "https://static1.terrafemina.com/articles/0/26/60/80/@/272235-le-clown-de-ca-il-est-revenu-joue-1200x0-1.jpg",
+  }
 ]
 
 contracts.shuffle.each do |contract_data|
