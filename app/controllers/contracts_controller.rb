@@ -8,6 +8,7 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
     @contract.save
     respond_to do |format|
+      flash.now[:notice] = "A new target has been added"
       format.html { redirect_to contract_path(@contract) }
       format.turbo_stream
     end
@@ -15,12 +16,14 @@ class ContractsController < ApplicationController
 
   def kill
     @contract.update(killed: true)
+    flash.now[:notice] = "Contract's target killed"
     redirect_to contract_path(@contract)
   end
 
   def destroy
     @contract.destroy
     respond_to do |format|
+      flash.now[:notice] = "Contract's Forgotten"
       format.html { redirect_to root_path }
       format.turbo_stream
     end
