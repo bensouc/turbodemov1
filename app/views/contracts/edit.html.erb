@@ -1,3 +1,5 @@
 <div class="container w-50">
-  <%= render 'contracts/form', contract: @contract %>
+  <%= turbo_frame_tag contract do %>
+    <%= render 'contracts/form', contract: @contract %>
+  <% end %>
 </div>

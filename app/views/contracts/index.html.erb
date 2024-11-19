@@ -1,14 +1,20 @@
 <div class="container mt-5 w-50">
-  <h1 class="mb-4">Contrats   <%= link_to new_contract_path do%>
+  <h1 class="mb-4">Contrats   <%= link_to new_contract_path, data:{turbo_frame:'new_contract'} do%>
     <i class="fa-solid fa-circle-plus text-black"></i>
   <% end %>
   </h1>
 
   <%#= render 'contracts/form', contract: Contract.new %>
-
+  <%= turbo_frame_tag "new_contract" %>
   <div class="list-group">
-    <% @contracts.each do |contract| %>
-      <%= render 'contracts/contract', contract: contract %>
+    <%= turbo_stream_from "contracts" %>
+    <%= turbo_frame_tag "contracts_list" do%>
+      <% @contracts.each do |contract| %>
+        <%#= render 'contracts/contract', contract: contract %>
+        <%= turbo_frame_tag contract ,src:"contracts/#{contract.id}", loading: 'lazy' do%>
+          <div style='height: 50px;'>LOADING </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>

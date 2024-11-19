@@ -1,5 +1,6 @@
 class ContractsController < ApplicationController
   before_action :set_contract, only: [:show, :edit, :update, :destroy, :kill]
+
   def index
     @contracts = Contract.all.sort_by(&:updated_at).reverse
   end
@@ -7,7 +8,11 @@ class ContractsController < ApplicationController
   def create
     @contract = Contract.new(contract_params)
     @contract.save
-    redirect_to contract_path(@contract), notice: "A new contract has been add to the List"
+    respond_to do |format|
+      flash[:notice] = "A new contract has been add to the List"
+      format.html { redirect_to contract_path(@contract)}
+      format.turbo_stream
+    end
   end
 
   def kill
@@ -17,7 +22,11 @@ class ContractsController < ApplicationController
 
   def destroy
     @contract.destroy
-    redirect_to root_path, notice: "Contract Destroyed"
+    respond_to do |format|
+      flash.now[:notice] = "Contract Destroyed"
+      format.html {redirect_to root_path}
+      format.turbo_stream 
+    end
   end
 
   def show

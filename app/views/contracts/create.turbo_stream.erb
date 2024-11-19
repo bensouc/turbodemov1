@@ -1,0 +1,7 @@
+<%# ajouter enhaut de la liste la partial de contract%>
+<%= turbo_stream.prepend "contracts_list" do %>
+  <%= render @contract %>
+<%end%>
+<%= turbo_stream.replace "new_contract" do%>
+  <%= turbo_frame_tag 'new_contract'%>
+<%end%>
